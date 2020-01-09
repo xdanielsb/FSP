@@ -1,0 +1,42 @@
+/*
+
+	@author: Daniel Santos
+
+*/
+/* Component One Radio */
+
+RADIO = TURNED_OFF,
+
+TURNED_OFF = ( on  -> TURNED_ON  ),
+
+TURNED_ON  = ( 
+				off  -> TURNED_OFF 
+			   |scan -> SCANNING
+),
+
+SCANNING = ( 
+			scan -> SCANNING
+			| ajuster -> PLAYING_RADIO
+			| find_end -> TURNED_ON
+			| reset -> TURNED_ON
+			| off -> TURNED_OFF
+			),
+
+PLAYING_RADIO = (
+				 reset -> TURNED_ON
+				| off -> TURNED_OFF
+				| reproduce -> PLAYING_RADIO
+				).
+
+
+/* Component two Reveil */
+
+REVEIL(TIME_ALARM=3)  = (init -> REVEIL[0]),
+REVEIL[i:0..TIME_ALARM] = (
+			when ( i < TIME_ALARM ) inc -> REVEIL[ i+1]
+		  | when ( i == TIME_ALARM) sound -> REVEIL
+						  ).
+
+
+// Composition
+||RADIO_REVIEL = ( RADIO || REVEIL )/{ sound/scan, init/on}.
