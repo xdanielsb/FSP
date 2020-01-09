@@ -1,0 +1,8 @@
+const NHOURS = 24
+HORLOGE = HOR[0],
+HOR[ s : 0..NHOURS ] = ( 
+		advance -> if  ( s == 24 ) then 
+				HOR[0]
+		else 
+				HOR[ s + 1]
+		).
