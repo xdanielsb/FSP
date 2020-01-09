@@ -1,0 +1,24 @@
+/**
+ * @author : Daniel Santos
+ **/
+
+const N   = 1
+range R   = 0..N
+range RES = 0..2*N*N
+
+SUM = (
+		input[i:R][j:R] -> sum -> TOTAL[i+j]
+	 ),
+
+TOTAL[res: RES] = (
+			out[ res ] -> SUM
+					).
+
+
+
+MUL = (
+		input[i:R] -> input[j:R] -> COMPUTE_MUL[i*j]
+		),
+
+
+COMPUTE_MUL[s:RES] = ( mul -> out[ s ] -> MUL).
