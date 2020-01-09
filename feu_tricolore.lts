@@ -1,0 +1,20 @@
+/*
+	@author: Daniel Santos
+	Specification for trafict lights
+*/
+
+/*
+	Identification:
+		States = { GREEN, ORANGE, RED}
+		Actions = 
+			1- change : change de coulour
+		Inital State: GREEN
+		Transitions:
+			GREEN - change - RED
+			...
+*/
+
+TRAFFIC_LIGHTS = GREEN,
+GREEN = ( change -> ORANGE),
+ORANGE  = ( change -> RED),
+RED = ( change -> GREEN).
