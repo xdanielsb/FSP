@@ -1,0 +1,8 @@
+
+// basic switch
+SWITCH =  (on->off->SWITCH).
+
+// composite
+||TWO_SWITCH = (a:SWITCH || b:SWITCH).
+
+||SWITCHES(N=3) = (forall[i:1..N] s[i]:SWITCH).

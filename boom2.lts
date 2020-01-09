@@ -1,0 +1,6 @@
+const N = 3
+BOMB = (start -> B[N]),
+B[ v: 0..N] = ( 
+		tick -> if ( v == 0 ) then boom ->  STOP
+				else B[ v - 1]
+		).

@@ -1,0 +1,5 @@
+const N = 3
+BUTTON = ( press -> BUTTON ).
+RELAY = ( on -> off -> RELAY).
+
+||RELAY_BTN = ( b[i:1..N]:BUTTON || RELAY )/{ {b[i:1..N].on,b[i:1..N].off}/press}.

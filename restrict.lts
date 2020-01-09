@@ -1,0 +1,2 @@
+
+NORMAL_USER = ( create -> modify -> delete->NORMAL_USER)\{modify, delete}.

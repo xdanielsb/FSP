@@ -1,0 +1,4 @@
+RESOURCE = (acquire->release->RESOURCE).
+USER =     (printer.acquire->use->printer.release->USER).
+
+||PRINTER_SHARE = (a:USER||b:USER||{a,b}::printer:RESOURCE).
