@@ -1,0 +1,9 @@
+/*
+	@author: Daniel Santos
+	Specification for a coffe machine
+*/
+
+COFFE_MACHINE = ( 
+	  getCoffe  -> returnCoffe -> COFFE_MACHINE
+	| getTea    -> returnTea   -> COFFE_MACHINE
+).

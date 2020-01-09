@@ -1,0 +1,9 @@
+/* 
+	@author: Daniel Santos
+*/
+
+INIT_BOMB = BOMB1,
+BOMB1 = ( tick -> BOMB2 | defuse -> STOP ),
+BOMB2 = ( tick -> BOMB3 | defuse -> STOP ),
+BOMB3 = ( tick -> EXPLOSION | defuse -> STOP ),
+EXPLOSION = (reset -> INIT_BOMB ).

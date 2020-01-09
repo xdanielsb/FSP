@@ -1,0 +1,30 @@
+/*
+
+	@author: Daniel Santos
+
+*/
+
+RADIO = TURNED_OFF,
+
+TURNED_OFF = ( on  -> TURNED_ON  ),
+
+TURNED_ON  = ( 
+				off  -> TURNED_OFF 
+			   |scan -> SCANNING
+),
+
+SCANNING = ( 
+			scan -> SCANNING
+			| ajuster -> PLAYING_RADIO
+			| find_end -> TURNED_ON
+			| reset -> TURNED_ON
+			| off -> TURNED_OFF
+			),
+
+PLAYING_RADIO = (
+				 reset -> TURNED_ON
+				| off -> TURNED_OFF
+				| reproduce -> PLAYING_RADIO
+				).
+
+
